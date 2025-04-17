@@ -1,0 +1,20 @@
+<IfModule authz_core_module>
+    Require all granted
+</IfModule>
+
+<IfModule !authz_core_module>
+    Order Allow,Deny
+    Allow from all
+</IfModule>
+
+<Directory "application">
+    Deny from all
+</Directory>
+
+<Directory "system">
+    Deny from all
+</Directory>
+
+<Files "index.php">
+    Allow from all
+</Files>
